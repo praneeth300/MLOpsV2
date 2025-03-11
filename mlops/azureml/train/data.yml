@@ -1,6 +1,12 @@
 $schema: https://azuremlschemas.azureedge.net/latest/data.schema.json
-
-type: uri_file
+type: uri_sql
 name: machine-failure-data
 description: A dataset for predicting machine failures in manufacturing
-path: ../../../data/machine_failure_data.csv
+
+# Specify the SQL database connection settings
+connection_string: 
+  server: test9090.database.windows.net
+  database: test-92002
+  username: test9090
+  password: Praneeth@123$
+  query: "SELECT * FROM machine_failure_data"  # Replace with your actual SQL query
