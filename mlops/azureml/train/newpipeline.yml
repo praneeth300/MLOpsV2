@@ -6,7 +6,7 @@ description: Training Pipeline to predict machine failure using Decision Tree cl
 
 inputs:
   input:
-    type: uri_sql
+    type: mltable
     name: machine-failure-data
 
 outputs:
