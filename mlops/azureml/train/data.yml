@@ -1,18 +1,18 @@
-$schema: https://azuremlschemas.azureedge.net/latest/datastore.schema.json
-
-datastores:
-  - name: my-sql-datastore
-    type: azure_sql
-    description: Datastore for accessing SQL Database
-    server: test9030.database.windows.net
-    database: test-db
-    username: test9030
-    password: Praneeth@123$  # Consider using a more secure approach for sensitive data
-
-datasets:
-  - name: machine-failure-data
-    description: A dataset for predicting machine failures in manufacturing
-    datastore: my-sql-datastore
-    query: |
-      SELECT * FROM machine_failure_data
-    type: mltable
+# Name of your datastore
+$schema: 'https://azuremlschemas.azureedge.net/dataAssetYaml/v1.0.schema.json'
+name: azure_sql_datastore
+description: Datastore for connecting to my Azure SQL Database
+type: azure_sql
+# Authentication type
+azure_sql_database_connection_type: azure_sql_server_db
+# Azure SQL Server URL (e.g., `sql.windows.net/<server name>`)
+azure_sql_database_url: test9030.database.windows.net
+# Database name
+azure_sql_database_name: test-db
+# Authentication method
+# Supported: 'username_password' 'azure_identity', 'service_principal', 'managed_identity', 'connection_string'
+authentication_type: 'username_password'
+# (Required for username_password authentication) Username for the SQL Database
+username: test9030
+# (Required for username_password authentication) Password for the SQL Database
+password: Praneeth@123$
