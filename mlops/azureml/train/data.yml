@@ -7,7 +7,7 @@ datastores:
     server: test9030.database.windows.net
     database: test-db
     username: test9030
-    password: Praneeth@1234$  # Consider using a more secure approach for sensitive data
+    password: Praneeth@123$  # Consider using a more secure approach for sensitive data
 
 datasets:
   - name: machine-failure-data
