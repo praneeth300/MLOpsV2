@@ -5,8 +5,8 @@ description: A dataset for predicting machine failures in manufacturing
 
 # Specify the SQL database connection settings
 connection_string: 
-  server: test9090.database.windows.net
-  database: test-92002
-  username: test9090
+  server: test9030.database.windows.net
+  database: test-db
+  username: test9030
   password: Praneeth@123$
   query: "SELECT * FROM machine_failure_data"  # Replace with your actual SQL query
