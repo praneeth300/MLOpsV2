@@ -1,12 +1,18 @@
-$schema: https://azuremlschemas.azureedge.net/latest/data.schema.json
-type: mltable
-name: machine-failure-data
-description: A dataset for predicting machine failures in manufacturing
+$schema: https://azuremlschemas.azureedge.net/latest/datastore.schema.json
 
-# Specify the SQL database connection settings
-connection_string: 
-  server: test9030.database.windows.net
-  database: test-db
-  username: test9030
-  password: Praneeth@123$
-  query: "SELECT * FROM machine_failure_data"  # Replace with your actual SQL query
+datastores:
+  - name: my-sql-datastore
+    type: azure_sql
+    description: Datastore for accessing SQL Database
+    server: test9030.database.windows.net
+    database: test-db
+    username: test9030
+    password: Praneeth@1234$  # Consider using a more secure approach for sensitive data
+
+datasets:
+  - name: machine-failure-data
+    description: A dataset for predicting machine failures in manufacturing
+    datastore: my-sql-datastore
+    query: |
+      SELECT * FROM machine_failure_data
+    type: mltable
