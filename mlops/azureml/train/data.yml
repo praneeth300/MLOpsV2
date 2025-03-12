@@ -1,5 +1,5 @@
 $schema: https://azuremlschemas.azureedge.net/latest/data.schema.json
-type: uri_sql
+type: mltable
 name: machine-failure-data
 description: A dataset for predicting machine failures in manufacturing
 
